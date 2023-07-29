@@ -23,28 +23,28 @@
     &kp N7   &kp N8 &kp N9
     &kp N4   &kp N5 &kp N6
     &kp N1   &kp N2 &kp N3
-    &kp A    &kp N0  &kp COMMA  
+    &kp C_PP &kp N0  &lt 1 COMMA  
    // &kp C_PP &kp N0 &mo 1
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
-         nav_layer {
+         debugger {
 // --------------------------
-// | BT_CLR |  HOME |  PGUP |
-// | _      |  END  |  PGDN |
-// | _      |  _    |  _    |
-// | _      |  _    |  _    |
+// | F5          |  F6        |  F7      |
+// | F3          |  END       |  PG_UP   |
+// | BT_NEXT     |  BT_PREV   |  PG_DOWN |
+// | Play/Pause  |  BT_CLEAR  |  ESC     |
 // --------------------------
              bindings = <
-     &bt BT_CLR &kp HOME &kp PG_UP
-     &trans     &kp END  &kp PG_DN
-     &trans     &trans   &trans
-     &trans     &trans   &trans
+     &kp F5         &kp F6         &kp F7
+     &kp F3         &kp F8         &kp PG_UP
+     &bt BT_NXT     &bt BT_PRV     &kp PG_DN
+     &kp C_PP       &bt BT_CLR     &lt 0 ESC
              >;
 
-             sensor-bindings = <&inc_dec_kp A B>;
+             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
          };
     };
 };
