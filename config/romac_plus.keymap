@@ -13,6 +13,10 @@
 #define KEYPAD  1
 
 / {
+chosen {
+        zmk,underglow = &led_strip;
+    };
+
 macros {
         zed_em_kay: zed_em_kay {
             label = "ZM_zed_em_kay";
