@@ -13,6 +13,19 @@
 #define KEYPAD  1
 
 / {
+macros {
+        zed_em_kay: zed_em_kay {
+            label = "ZM_zed_em_kay";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp Z &kp M &kp K>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -26,7 +39,7 @@
              bindings = <
      &kp F5             &kp F6         &kp F7
      &kp F3             &kp F8         &kp PG_UP
-     &rgb_ug RGB_TOG    &kp C_MUTE     &kp PG_DN
+     &rgb_ug RGB_TOG    &kp &zed_em_kay     &kp PG_DN
      &kp C_PP           &bt BT_CLR     &tog KEYPAD
              >;
 
