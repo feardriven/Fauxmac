@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
 
 #define DEFAULT 0
 #define KEYPAD  1
@@ -23,10 +24,10 @@
 // | M_PLAY      |  BT_CLEAR  |  TOGGLE  |
 // --------------------------
              bindings = <
-     &kp F5         &kp F6         &kp F7
-     &kp F3         &kp F8         &kp PG_UP
-     &bt BT_NXT     &bt BT_PRV     &kp PG_DN
-     &kp C_PP       &bt BT_CLR     &tog KEYPAD
+     &kp F5             &kp F6         &kp F7
+     &kp F3             &kp F8         &kp PG_UP
+     &rgb_ug RGB_TOG    C_MUTE         &kp PG_DN
+     &kp C_PP           &bt BT_CLR     &tog KEYPAD
              >;
 
              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
