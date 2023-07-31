@@ -26,7 +26,7 @@
              bindings = <
      &kp F5             &kp F6         &kp F7
      &kp F3             &kp F8         &kp PG_UP
-     &rgb_ug RGB_TOG    C_MUTE         &kp PG_DN
+     &rgb_ug RGB_TOG    &kp C_MUTE     &kp PG_DN
      &kp C_PP           &bt BT_CLR     &tog KEYPAD
              >;
 
