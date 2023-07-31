@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define DEFAULT 0
-#define DEBUG   1
+#define KEYPAD  1
 
 / {
     keymap {
@@ -17,36 +17,38 @@
 
         default_layer {
 // --------------------------
-// | 7      |  8  |  9      |
-// | 4      |  5  |  6      |
-// | 1      |  2  |  3      |
-// | M_PLAY |  0  |  MO(1)  |
-// --------------------------
-            bindings = <
-    &kp N7       &kp N8     &kp N9
-    &kp N4       &kp N5     &kp N6
-    &kp N1       &kp N2     &kp N3
-    &kp C_PP     &kp N0     &tog DEBUG 
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-         debugger {
-// --------------------------
 // | F5          |  F6        |  F7      |
-// | F3          |  END       |  PG_UP   |
+// | F3          |  F8        |  PG_UP   |
 // | BT_NEXT     |  BT_PREV   |  PG_DOWN |
-// | Play/Pause  |  BT_CLEAR  |  ESC     |
+// | M_PLAY      |  BT_CLEAR  |  TOGGLE  |
 // --------------------------
              bindings = <
      &kp F5         &kp F6         &kp F7
      &kp F3         &kp F8         &kp PG_UP
      &bt BT_NXT     &bt BT_PRV     &kp PG_DN
-     &kp C_PP       &bt BT_CLR     &tog DEBUG
+     &kp C_PP       &bt BT_CLR     &tog KEYPAD
              >;
 
-             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
          };
+
+        keypad {
+// --------------------------
+// | 7      |  8  |  9      |
+// | 4      |  5  |  6      |
+// | 1      |  2  |  3      |
+// | M_PLAY |  0  |  TOGGLE |
+// --------------------------
+            bindings = <
+    &kp N7       &kp N8     &kp N9
+    &kp N4       &kp N5     &kp N6
+    &kp N1       &kp N2     &kp N3
+    &kp C_PP     &kp N0     &tog KEYPAD 
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+        };
+
+         
     };
 };
