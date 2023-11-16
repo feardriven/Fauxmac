@@ -12,6 +12,10 @@
 #define DEFAULT 0
 #define KEYPAD  1
 
+&led_strip {
+    chain-length = <4>;
+};
+
 / {
 chosen {
         zmk,underglow = &led_strip;
