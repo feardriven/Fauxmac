@@ -17,9 +17,7 @@
 };
 
 / {
-chosen {
-        zmk,underglow = &led_strip;
-    };
+
 
 macros {
         zed_em_kay: zed_em_kay {
